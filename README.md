@@ -1,4 +1,5 @@
-Breast Cancer Detection using Support Vector Machine
+Breast Cancer Detection using Support Vector Machine 
+
 This machine learning project uses Support Vector Machines (SVM) to predict whether a breast tumor is benign or malignant, based on numerical features extracted from digitized images. The goal is to assist in early and accurate diagnosis of breast cancer.
 
 📁 Project Files
