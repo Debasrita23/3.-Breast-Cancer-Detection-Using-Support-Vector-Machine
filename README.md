@@ -1,57 +1,75 @@
-Breast Cancer Detection using Support Vector Machine 
+#  Breast Cancer Detection using Support Vector Machine (SVM)
 
-This machine learning project uses Support Vector Machines (SVM) to predict whether a breast tumor is benign or malignant, based on numerical features extracted from digitized images. The goal is to assist in early and accurate diagnosis of breast cancer.
+This machine learning project applies **Support Vector Machines (SVM)** to classify breast tumors as **benign** or **malignant** based on numerical features extracted from digitized images of breast masses. The objective is to support early and reliable diagnosis of breast cancer.
 
-📁 Project Files
-Breast_Cancer.ipynb – Main notebook with data preprocessing, modeling, and plots
+---
 
-data.csv – Dataset used for training
+## 📁 Project Files
 
-confusion_matrix.png – Confusion matrix showing prediction results
+| File | Description |
+|------|-------------|
+| `Breast_Cancer.ipynb` | Jupyter Notebook with full workflow: preprocessing, modeling, and visualization |
+| `data.csv` | Dataset used for training and testing the model |
+| `confusion_matrix.png` | Confusion matrix illustrating classification performance |
+| `scatter1.png` → `scatter4.png` | Scatter plots showing feature relationships by diagnosis |
 
-scatter1.png → scatter4.png – Visual scatter plots for feature relationships
+---
 
-📊 Dataset Details
-Source: UCI Breast Cancer Wisconsin (Diagnostic)
+## 📊 Dataset Details
 
-Samples: 569
+- **Source**: UCI Breast Cancer Wisconsin (Diagnostic) Dataset  
+- **Samples**: 569  
+- **Features**: 30 real-valued attributes (e.g., radius, texture, smoothness)  
+- **Target Classes**:
+  - **M (Malignant)** → Encoded as `1`
+  - **B (Benign)** → Encoded as `0`
 
-Classes:
+---
 
-M (Malignant) → Encoded as 1
+## ⚙️ Workflow Summary
 
-B (Benign) → Encoded as 0
+### ✅ Step 1: Preprocessing
+- Removed irrelevant columns (e.g., ID)
+- Encoded categorical diagnosis labels
+- Scaled features using `StandardScaler`
 
-Features: 30 real-valued measurements such as radius, texture, smoothness
+### ✅ Step 2: Model Training
+- **Model**: Support Vector Machine (SVM) with **RBF kernel**
+- **Train/Test Split**: 80/20
 
-⚙️ Workflow Summary
-✅ Step 1: Preprocessing
-Dropped irrelevant columns
+### ✅ Step 3: Evaluation
+- **Accuracy**: ~98.2%
+- **Confusion Matrix**: Included (`confusion_matrix.png`)  
+  Shows excellent separation of benign and malignant classes
 
-Label encoded target
+---
 
-Scaled features using StandardScaler
+## 📈 Visualizations
 
-✅ Step 2: Model Training
-Model: SVM (rbf kernel)
+Four scatter plots show relationships between key features, colored by diagnosis:
 
-Train/Test Split: 80/20
+| Plot | X-axis | Y-axis | Description |
+|------|--------|--------|-------------|
+| `scatter1.png` | concavity_mean | perimeter_mean | Strong separation between classes |
+| `scatter2.png` | radius_mean | texture_mean | Indicates cluster boundaries |
+| `scatter3.png` | area_mean | smoothness_mean | Visual class grouping |
+| `scatter4.png` | compactness_mean | concave points_mean | Highlights malignancy features |
 
-✅ Step 3: Evaluation
-Accuracy: ~98.2%
+> 🔵 Benign (0)  🔴 Malignant (1)
 
-Confusion Matrix:
+---
 
-📊 Scatter Plots
-Each plot shows 2 features colored by diagnosis:
-🔵 0 = Benign  🔴 1 = Malignant
+## 🛠 Requirements
 
-1️⃣ concavity_mean vs perimeter_mean
+- Python 3.x
+- pandas
+- numpy
+- matplotlib
+- seaborn
+- scikit-learn
+- Jupyter Notebook
 
-2️⃣ radius_mean vs texture_mean
-
-3️⃣ area_mean vs smoothness_mean
-
-4️⃣ compactness_mean vs concave points_mean
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn notebook
 
 
